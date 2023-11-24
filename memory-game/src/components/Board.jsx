@@ -25,8 +25,15 @@ export const Board = () => {
             return [img, duplicate];
         });
         
-        
-
+        const newCards = shuffleArray(duplicatecards)
+        const cards = newCards.map(card => {
+            return {
+                ...card,
+                flipped: false,
+                matched: false,
+            }
+        })
+        setCards(cards)
     }
 
     return(
