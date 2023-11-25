@@ -41,6 +41,10 @@ export const Board = () => {
         createBoard();
     },[]);
 
+    const handleCardClick = (id) =>{
+        
+    };
+
     return(
         <div className='relative h-screen flex items-center'>
             <h1 className="font-bold text-4xl">Memory Game</h1>
@@ -49,7 +53,9 @@ export const Board = () => {
                 cards.map(card => (
                     <Card
                        card={card}
-                       key={card.id}/>
+                       key={card.id}
+                       handleCardClick={handleCardClick}
+                       />
                 ))}
         </div>
         </div>
