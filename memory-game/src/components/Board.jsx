@@ -46,7 +46,26 @@ export const Board = () => {
         const [currentCard] = cards.filter(card => card.id === id)
 
         if (!currentCard.flipped && !currentCard.matched){
-            
+            currentCard.flipped = true;
+
+            const newFlippedCards = [...flippedCards, currentCard]
+            setFlippedCards(newFlippedCards)
+
+            if(newFlippedCards.length === 2){
+                const [firstCard, secondCard] = newFlippedCards
+
+                if(firstCard.img === secondCard.img){
+                    firstCard.matched = true;
+                    secondCard.matched = true;
+
+                }else {
+                    setTimeout(()=>{
+                        firstCard.flipped = false;
+                        secondCard.flipped = false;
+
+                    }, 1000)
+                }
+            }
         }
     };
 
