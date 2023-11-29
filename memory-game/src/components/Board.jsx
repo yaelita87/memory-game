@@ -62,10 +62,17 @@ export const Board = () => {
                     setTimeout(()=>{
                         firstCard.flipped = false;
                         secondCard.flipped = false;
+                        setCards(cards);
 
-                    }, 1000)
+                    }, 1000);
                 }
+                setFlippedCards([]);
+                setMoves(moves + 1);
             }
+            setCards(cards);
+        }
+        if(cards.every(card => card.matched)){
+            setGameOver(true)
         }
     };
 
