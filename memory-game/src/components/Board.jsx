@@ -42,6 +42,7 @@ export const Board = () => {
     },[]);
 
     const handleCardClick = (id) =>{
+        if(isDisabled) return;
 
         const [currentCard] = cards.filter(card => card.id === id)
 
@@ -52,17 +53,20 @@ export const Board = () => {
             setFlippedCards(newFlippedCards)
 
             if(newFlippedCards.length === 2){
+                setIsDisabled(true);
                 const [firstCard, secondCard] = newFlippedCards
 
                 if(firstCard.img === secondCard.img){
                     firstCard.matched = true;
                     secondCard.matched = true;
+                    setIsDisabled(false);
 
                 }else {
                     setTimeout(()=>{
                         firstCard.flipped = false;
                         secondCard.flipped = false;
                         setCards(cards);
+                        setIsDisabled(false);
 
                     }, 1000);
                 }
@@ -72,7 +76,8 @@ export const Board = () => {
             setCards(cards);
         }
         if(cards.every(card => card.matched)){
-            setGameOver(true)
+            setGameOver(true);
+            setIsDisabled(true);
         }
     };
 
