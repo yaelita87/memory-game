@@ -42,7 +42,12 @@ export const Board = () => {
     },[]);
 
     const handleCardClick = (id) =>{
-        
+
+        const [currentCard] = cards.filter(card => card.id === id)
+
+        if (!currentCard.flipped && !currentCard.matched){
+            
+        }
     };
 
     return(
