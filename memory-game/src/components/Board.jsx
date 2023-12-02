@@ -89,6 +89,8 @@ export const Board = () => {
     }
 
     return(
+        <>
+        <div className='fixed inse-0 bg-black opacity-50 z-10'></div>
         <div className='relative h-screen flex items-center'>
             <div className='mx-auto flex flex-col justify-center items-center'>
             <h1 className="font-bold text-4xl">Memory Game</h1>
@@ -107,5 +109,6 @@ export const Board = () => {
         </button>
         </div>
         </div>
+        </>
     );
 };
