@@ -81,6 +81,13 @@ export const Board = () => {
         }
     };
 
+    const handleNewGame = () => {
+        setCards([]);
+        createBoard();
+        setGameOver(false);
+        setIsDisabled(false);
+    }
+
     return(
         <div className='relative h-screen flex items-center'>
             <h1 className="font-bold text-4xl">Memory Game</h1>
