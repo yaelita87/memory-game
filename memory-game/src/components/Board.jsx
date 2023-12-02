@@ -101,6 +101,9 @@ export const Board = () => {
                        />
                 ))}
         </div>
+        <button className="bg-black font-semibold text-white rounded-md px-5 py-1 hover:bg-yellow-500 hover:text-black transition-all mb-3" onClick={handleNewGame}>
+           New Game
+        </button>
         </div>
     );
 };
