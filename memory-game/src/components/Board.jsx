@@ -90,6 +90,7 @@ export const Board = () => {
 
     return(
         <div className='relative h-screen flex items-center'>
+            <div className='mx-auto flex flex-col justify-center items-center'>
             <h1 className="font-bold text-4xl">Memory Game</h1>
         <div className="grid grid-cols-4 gap-3 justify-center items-center px-3 py-5 my-3">
             {
@@ -104,6 +105,7 @@ export const Board = () => {
         <button className="bg-black font-semibold text-white rounded-md px-5 py-1 hover:bg-yellow-500 hover:text-black transition-all mb-3" onClick={handleNewGame}>
            New Game
         </button>
+        </div>
         </div>
     );
 };
